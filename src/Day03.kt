@@ -3,17 +3,17 @@ fun main() {
 
         var priorities = 0
         for (line in input) {
-            val first = line.substring(0..line.length/2 - 1)
+            val first = line.substring(0 until line.length/2)
             //println(first)
-            val second = line.substring(line.length/2  ..line.length - 1)
+            val second = line.substring(line.length/2 until line.length)
             //println(second)
             for (char in first) {
                 if (char in second) {
                     //println(char)
-                    if (char.isLowerCase()) {
-                        priorities += char.minus('a') + 1
+                    priorities += if (char.isLowerCase()) {
+                        char.minus('a') + 1
                     } else {
-                        priorities += char.minus('A') + 27
+                        char.minus('A') + 27
                         //println(char.minus('A') + 27)
                     }
                     break
@@ -28,15 +28,14 @@ fun main() {
 
     fun part2(input: List<String>): Int {
         var priorities = 0
-        for (index in 0..input.size - 1 step 3) {
+        for (index in input.indices step 3) {
             for (char in input[index]) {
                 if (char in input[index + 1] && char in input[index + 2]) {
-                    if (char.isLowerCase()) {
-                        priorities += char.minus('a') + 1
-                    } else {
-                        priorities += char.minus('A') + 27
-                        //println(char.minus('A') + 27)
-                    }
+                    priorities += if (char.isLowerCase()) {
+                                        char.minus('a') + 1
+                                    } else {
+                                        char.minus('A') + 27
+                                    }
                     break
                 }
             }

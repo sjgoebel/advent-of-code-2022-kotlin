@@ -1,6 +1,6 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        var nums = mutableListOf<Int>()
+        val nums = mutableListOf<Int>()
         var sum = 0
         for (s in input) {
             if (s != "") {
@@ -16,7 +16,7 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        var nums = mutableListOf<Int>()
+        val nums = mutableListOf<Int>()
         var sum = 0
         for (s in input) {
             if (s != "") {

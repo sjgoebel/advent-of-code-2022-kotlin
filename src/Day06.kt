@@ -3,9 +3,7 @@ fun main() {
         val signal = input[0]
         for (i in signal.indices) {
             val chars = signal.substring(i until i + 4).toCharArray().toSet()
-            //println(chars)
             if (chars.size == 4) {
-                //println(i)
                 return i + 4
             }
         }
@@ -17,9 +15,7 @@ fun main() {
         val signal = input[0]
         for (i in signal.indices) {
             val chars = signal.substring(i until i + 14).toCharArray().toSet()
-            //println(chars)
             if (chars.size == 14) {
-                //println(i)
                 return i + 14
             }
         }

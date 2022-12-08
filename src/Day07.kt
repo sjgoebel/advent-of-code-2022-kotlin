@@ -131,7 +131,6 @@ fun main() {
 }
 
 abstract class DirectoryItem(val name: String) {
-
     abstract fun sizeOf(): Int
 }
 
